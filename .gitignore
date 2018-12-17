@@ -4,5 +4,6 @@
 *.egg
 *.egg-info
 *.txt
+*.pkl
 dist
 build
