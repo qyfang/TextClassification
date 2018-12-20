@@ -89,9 +89,18 @@ def testNaiveBayesClassifier():
 
     # 打印测试报告
     print confusion_matrix,'\n'
+    
     print '{0:>14}\t{1:<10}\t{2:<10}\t{3:<10}'.format('classification','Recall','Precision','F1-Score')
     for i, target_name in enumerate(os.listdir('data/test/raw/')):
         print '{0:>14}\t{1:<10.4f}\t{2:<10.4f}\t{3:<10.4f}'.format(target_name, recall_list[i], precision_list[i], f_list[i])
+    print ''
+    avg_r, avg_p, avg_f = 0.0, 0.0, 0.0
+    for a,b,c in zip(recall_list,precision_list,f_list):
+        avg_r += a
+        avg_p += b
+        avg_f += c
+    print '{0:>14}\t{1:<10.4f}\t{2:<10.4f}\t{3:<10.4f}'.format('avg / total', avg_r/10, avg_p/10, avg_f/10)
+
     print '\n','Correct Rate:',correct
     
 

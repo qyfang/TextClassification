@@ -71,7 +71,7 @@ def processText(text_file_folder_path, term_file_folder_path):
 
             args = (text_path, term_path, stopwords_list)
 
-            # 创建文本转分词的进程
+            # 调用文本转分词的进程
             pool.apply_async(convertText2Term, args)
             
     pool.close()

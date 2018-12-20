@@ -61,17 +61,14 @@ def generateMatrix():
 
         # 训练集拟合后转换为矩阵，测试集根据拟合好的矢量器直接转换为矩阵
         if x == 'train':
-            matrix = vectorizer.fit(term_generator)
-            # matrix = vectorizer.fit_transform(term_generator)
+            matrix = vectorizer.fit_transform(term_generator)
             joblib.dump(vectorizer.vocabulary_, 'matrix/vocabulary.pkl')
 
         elif x == 'test':
             matrix = vectorizer.transform(term_generator)
 
         # 保存特征矩阵
-        # joblib.dump(matrix, matrix_path)
-        # print matrix.shape
-        break
+        joblib.dump(matrix, matrix_path)
 
 
 

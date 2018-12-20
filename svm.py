@@ -62,7 +62,7 @@ def trainClassifier():
 
 def testClassifier():
     """
-    测试训练集
+    测试测试集
     """
     # 测试集特征矩阵保存路径
     train_matrix_path = 'matrix/test/matrix.pkl'

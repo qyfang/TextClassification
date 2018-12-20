@@ -38,6 +38,20 @@ def _calculate(*matrices):
     return df
 
 
+def viewMatrix():
+    """
+    查看数据矩阵
+    """
+    train_matrix_path = 'matrix/train/matrix.pkl'
+    test_matrix_path = 'matrix/test/matrix.pkl'
+
+    train_matrix = joblib.load(train_matrix_path)
+    test_matrix = joblib.load(test_matrix_path)
+
+    print 'Train Matrix',train_matrix.shape
+    print 'Test Matrix',test_matrix.shape
+
+
 def viewVocabulary():
     """
     查看数据词典
@@ -98,11 +112,10 @@ def viewTestResult():
 
 
 if __name__ == '__main__':
+    # viewMatrix()
+
     # viewVocabulary()
 
     viewTestResult()
-
-
-    
 
     
