@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 
 def _calculate(*matrices):
-    labels = os.listdir('data/test/raw/')
+    labels = ['culture', 'education', 'entertainment', 'estate', 'finance', 'game', 'gov', 'society', 'sport', 'technology'] #os.listdir('data/test/raw/')
     df = pd.DataFrame(columns=('Classifier', 'classification', 'recall', 'precision', 'f1score'))
     index = 0
     for t, confusion_matrix in enumerate(matrices):
@@ -50,6 +50,7 @@ def viewMatrix():
 
     print 'Train Matrix',train_matrix.shape
     print 'Test Matrix',test_matrix.shape
+    print type(test_matrix)
 
 
 def viewVocabulary():
@@ -70,7 +71,7 @@ def viewTestResult():
     """
     bayes = joblib.load('results/Bayes_confusion_matrix.pkl')
     svm = joblib.load('results/SVM_confusion_matrix.pkl')
-    labels = os.listdir('data/test/raw/')
+    labels = ['culture', 'education', 'entertainment', 'estate', 'finance', 'game', 'gov', 'society', 'sport' 'technology'] #os.listdir('data/test/raw/')
 
     # 绘制混淆矩阵的热力图
     plt.figure(figsize=(12,5))
